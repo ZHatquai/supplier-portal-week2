@@ -41,6 +41,13 @@ app under `src/`. `src/data/questionnaire.js` is the single source of truth
 - [ ] Confirm with the builder whether the two extra PDFs (Procurement Strategy,
       Supplier Engagement Programme) should get their own resource links.
 - [ ] Optional hardening: code-split SheetJS into Door 2; revisit the xlsx advisory.
+- [ ] Future enhancement (builder request — not now): after a Door 2 upload, flag
+      completeness on Review/Confirmation — highlight any REQUIRED field left blank
+      so the supplier sees what still must be submitted. Must respect the EcoVadis
+      bypass (S2–S7 optional when a scorecard is attached). Today Door 2 is lenient
+      on completeness and shows blanks as "Not provided" without flagging required
+      gaps. Reuse the existing `isRequired` / `validateField` logic in
+      `src/data/questionnaire.js` to mark the missing-required items.
 
 ## Build decisions
 - Developed and pushed to branch `claude/folder-content-build-rzzg8r` per the task's
